@@ -87,8 +87,8 @@ rm -rf ${TMPDIR}/channels_backup_by_"* astra-* bbc_pmt_v6*
 echo
 set -e
 echo "Downloading And Insalling Channel Please Wait ......"
-wget $MY_URL/channels_backup_by_tarek-ashry.tar.gz -qP $TMPDIR
-tar -zxf $TMPDIR/channels_backup_by_tarek-ashry.tar.gz -C /
+wget $MY_URL/channels_backup_by-Abou-Rined.tar.gz -qP $TMPDIR
+tar -zxf $TMPDIR/channels_backup_by-Abou-Rined.tar.gz -C /
 sleep 5
 set +e
 echo
@@ -156,7 +156,7 @@ if [ $OSTYPE = "Opensource" ]; then
 fi
 
 #########################
-rm -rf ${TMPDIR}/channels_backup_by_Emil-Nabil.tar.gz
+rm -rf ${TMPDIR}/channels_backup_by-Abou-Rined.tar.gz
 rm -rf ${TMPDIR}/* astra-
 rm -rf ${TMPDIR}/* bbc_pmt_v6
 
@@ -181,6 +181,8 @@ else
 fi
 
 exit 0
+
+
 
 
 
