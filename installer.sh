@@ -1,54 +1,6 @@
 #!/bin/sh # 
- # # Command: wget https://raw.githubusercontent.com/emilnabil/channel-Abou-Rined/main/installer.sh -qO - | /bin/sh # # ########################################### ###########################################  
-MY_URL="https://raw.githubusercontent.com/emilnabil/channel-Abou-Rined/main"  
-echo "******************************************************************************************************************"
-echo "    download and install channel  "
-echo "============================================================================================================================="
-echo " remove old channel "
-# Remove any Channel  # 
-rm -rf /etc/enigma2/*.tv 
-rm -rf /etc/enigma2/*.radio 
-#####################################################################################
-echo "         install channel    "
-cd /tmp
-set -e 
-wget -q  "https://raw.githubusercontent.com/emilnabil/channel-Abou-Rined/main/channels_backup_by-Abou-Rined.tar.gz"
-wait
-tar -xzf channels_backup_by-Abou-Rined.tar.gz  -C /
-wait
-cd ..
-set +e
-rm -f /tmp/channels_backup_by-Abou-Rined.tar.gz
-sleep 2;
-echo "" 
-echo "Installing astra sm patch"
-opkg install astra-sm 
-opkg install dvbsnoop
-sleep 1
-wget -O /etc/astra/scripts/abertis "https://drive.google.com/uc?id=1B0k60UTtmrHgQTrRkI6SFR3TenCZO_eL&export=download"
-chmod 755 /etc/astra/scripts/abertis
-sleep 1
-wget -O /etc/astra/astra.conf "https://drive.google.com/uc?id=1B16pdta4o2u_PChUAG1hEAWKj1So2vCh&export=download"
-chmod 755 /etc/astra/astra.conf
-sleep 1
-echo ""
-echo ""
-echo "" 
-echo "****************************************************************************************************************************"
-echo "# Channel  INSTALLED SUCCESSFULLY #"
-echo "
-echo " "*********************************************************" 
-	echo "********************************************************************************"
-echo "   UPLOADED BY  >>>>   EMIL_NABIL "   
-sleep 4;
-	echo '========================================================================================================================='
-###########################################                                                                                                                  
-echo ". >>>>         RESTARING     <<<<"
-echo "**********************************************************************************"
-wait
-init 6
-exit 0
-
+ # #
+echo "TVlfVVJMPSJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vZW1pbG5hYmlsL2NoYW5uZWwtQWJvdS1SaW5lZC9tYWluIiAgCmVjaG8gIioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKiIKZWNobyAiICAgIGRvd25sb2FkIGFuZCBpbnN0YWxsIGNoYW5uZWwgICIKZWNobyAiPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0iCmVjaG8gIiByZW1vdmUgb2xkIGNoYW5uZWwgIgojIFJlbW92ZSBhbnkgQ2hhbm5lbCAgIyAKcm0gLXJmIC9ldGMvZW5pZ21hMi8qLnR2IApybSAtcmYgL2V0Yy9lbmlnbWEyLyoucmFkaW8gCiMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMKZWNobyAiICAgICAgICAgaW5zdGFsbCBjaGFubmVsICAgICIKY2QgL3RtcApzZXQgLWUgCndnZXQgLXEgICJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vZW1pbG5hYmlsL2NoYW5uZWwtQWJvdS1SaW5lZC9tYWluL2NoYW5uZWxzX2JhY2t1cF9ieS1BYm91LVJpbmVkLnRhci5neiIKd2FpdAp0YXIgLXh6ZiBjaGFubmVsc19iYWNrdXBfYnktQWJvdS1SaW5lZC50YXIuZ3ogIC1DIC8Kd2FpdApjZCAuLgpzZXQgK2UKcm0gLWYgL3RtcC9jaGFubmVsc19iYWNrdXBfYnktQWJvdS1SaW5lZC50YXIuZ3oKc2xlZXAgMjsKZWNobyAiIiAKZWNobyAiSW5zdGFsbGluZyBhc3RyYSBzbSBwYXRjaCIKb3BrZyBpbnN0YWxsIGFzdHJhLXNtIApvcGtnIGluc3RhbGwgZHZic25vb3AKc2xlZXAgMQp3Z2V0IC1PIC9ldGMvYXN0cmEvc2NyaXB0cy9hYmVydGlzICJodHRwczovL2RyaXZlLmdvb2dsZS5jb20vdWM/aWQ9MUIwazYwVVR0bXJIZ1FUclJrSTZTRlIzVGVuQ1pPX2VMJmV4cG9ydD1kb3dubG9hZCIKY2htb2QgNzU1IC9ldGMvYXN0cmEvc2NyaXB0cy9hYmVydGlzCnNsZWVwIDEKd2dldCAtTyAvZXRjL2FzdHJhL2FzdHJhLmNvbmYgImh0dHBzOi8vZHJpdmUuZ29vZ2xlLmNvbS91Yz9pZD0xQjE2cGR0YTRvMnVfUENoVUFHMWhFQVdLajFTbzJ2Q2gmZXhwb3J0PWRvd25sb2FkIgpjaG1vZCA3NTUgL2V0Yy9hc3RyYS9hc3RyYS5jb25mCnNsZWVwIDEKZWNobyAiIgplY2hvICIiCmVjaG8gIiIgCmVjaG8gIioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioiCmVjaG8gIiMgQ2hhbm5lbCAgSU5TVEFMTEVEIFNVQ0NFU1NGVUxMWSAjIgplY2hvICIKZWNobyAiICIqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioiIAoJZWNobyAiKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioiCmVjaG8gIiAgIFVQTE9BREVEIEJZICA+Pj4+ICAgRU1JTF9OQUJJTCAiICAgCnNsZWVwIDQ7CgllY2hvICc9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09JwojIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCmVjaG8gIi4gPj4+PiAgICAgICAgIFJFU1RBUklORyAgICAgPDw8PCIKZWNobyAiKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKiIKd2FpdAppbml0IDYKZXhpdCAwCg==" | base64 -d | sh
 
 
 
